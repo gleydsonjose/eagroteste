@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="animate.css">
+    <script src="https://kit.fontawesome.com/d22aa83c9e.js" crossorigin="anonymous" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+    <script src="main.js" defer></script>
+    <title>eAgro | Software para gestão do agronegócio</title>
+</head>
+<body>
+  <!-- MAIN-MENU -->
+  <nav id="main-menu-body">
+    <div id="main-logo">
+      <img src="images/logo.png" alt="eAgro Logo"/>
+    </div>
+    <div id="main-menu">
+      <form id="search-bar-body">
+        <input type="text" placeholder="O que procura?" id="search-bar">
+        <button type="submit" id="search-bar-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <select id="change-ownership-body">
+        <option value="">Trocar de Propriedade</option>
+        <option value="">Fazenda Onça</option>
+      </select>
+      <ul id="main-submenu">
+        <li class="btngroup-submenu" id="register-btn-body">
+          <a id="register-btn">
+            <i class="fas fa-plus-circle"></i>
+            Cadastros
+            <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="none" id="register-btn-dropdown">
+            <li class="register-btn-dropdown-title">Agrícola</li>
+            <li><a href="">Propriedades</a></li>
+            <li><a href="">Talhões</a></li>
+            <li><a href="">Maquinários</a></li>
+            <li><a href="">Combustíveis</a></li>
+            <li><a href="">Culturas</a></li>
+            <li><a href="">Variedades</a></li>
+            <li><a href="">Procedimentos</a></li>
+            <li><a href="">Safras</a></li>
+            <li><a href="">Funcionários</a></li>
+            <li><a href="">Produtos</a></li>
+            <li><a href="">Pluviômetro</a></li>
+            <li><a href="">Previsões de Safras</a></li>
+            <hr/>
+            <li class="register-btn-dropdown-title">Financeiro</li>
+            <li><a href="">Fornecedores</a></li>
+            <li><a href="">Clientes</a></li>
+            <li><a href="">Plano de Contas</a></li>
+            <li><a href="">Orçamentos</a></li>
+            <li><a href="">Lavadores</a></li>
+            <li><a href="">Terreiros</a></li>
+            <li><a href="">Tulhas</a></li>
+            <li><a href="">Secadores</a></li>
+          </ul>
+        </li>
+        <li class="btngroup-submenu" id="configuration-btn-body">
+          <a href="" id="configuration-btn">
+            <i class="fas fa-cogs"></i>
+          </a>
+        </li>
+        <li class="btngroup-submenu" id="user-btn-body">
+          <a id="user-btn">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="none" id="user-btn-dropdown">
+            <li><a href="">Usuários</a></li>
+            <li><a href="">Meu perfil</a></li>
+          </ul>
+        </li>
+        <li class="btngroup-submenu">
+          <a href="">
+            <i class="fas fa-question-circle"></i>
+          </a>
+        </li>
+        <li class="btngroup-submenu" id="logout-btn-body">
+          <a href="" id="logout-btn">
+            Sair
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- MAIN-MENU -->
+  <!-- MAIN -->
+  <main id="main-body">
+    <!-- SIDE-MENU -->
+    <nav id="side-menu-body">
+      <div id="btn-extend-menu-body" data-side-menu="close">
+        <a id="btn-extend-menu">
+          <i class="fas fa-chevron-circle-left none" id="side-menu-icon-close"></i>
+          <i class="fas fa-chevron-circle-right" id="side-menu-icon-open"></i>
+          <span class="none">Fechar</span>
+        </a>
+      </div>
+      <ul id="side-menu-btngroup">
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-tachometer-alt"></i>
+            <span class="none">Dashboard</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a class="active" href="">
+            <i class="fas fa-leaf"></i>
+            <span class="none">Atividades Agrícolas</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="far fa-newspaper"></i>
+            <span class="none">Compras de Produtos</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-tint"></i>
+            <span class="none">Compras de Combustíveis</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-truck"></i>
+            <span class="none">Maquinários</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-dollar-sign"></i>
+            <span class="none">Venda da Produção</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a id="stock-list-item">
+            <i class="fas fa-tags"></i>
+            <span class="none">Estoques</span>
+            <i class="fas fa-chevron-right final-icon none" id="final-icon-close"></i>
+            <i class="fas fa-chevron-down final-icon none" id="final-icon-open"></i>
+          </a>
+          <ul class="none" id="stock-list-dropdown">
+            <li class="stock-list-children">
+              <a href="">
+                <i class="fas fa-angle-double-right"></i>
+                <span class="none">Estoque de Produtos</span>
+              </a>
+            </li>
+            <li class="stock-list-children">
+              <a href="">
+                <i class="fas fa-angle-double-right"></i>
+                <span class="none">Abaixo do Mínimo</span>
+              </a>
+            </li>
+            <li class="stock-list-children">
+              <a href="">
+                <i class="fas fa-angle-double-right"></i>
+                <span class="none">Estoque de Combustíveis</span>
+              </a>
+            </li>
+            <li class="stock-list-children">
+              <a href="">
+                <i class="fas fa-angle-double-right"></i>
+                <span class="none">Transferências</spanclass="none">
+              </a>
+            </li>
+            <li class="stock-list-children">
+              <a href="">
+                <i class="fas fa-angle-double-right"></i>
+                <span class="none">Ajuste de Estoque</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="far fa-money-bill-alt"></i>
+            <span class="none">Controle Financeiro</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-tree"></i>
+            <span class="none">Rastreabilidade</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="none">Mapa</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-chart-line"></i>
+            <span class="none">eBroker</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-calendar-alt"></i>
+            <span class="none">eCalendário</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="far fa-file-pdf"></i>
+            <span class="none">Relatórios</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-plug"></i>
+            <span class="none">Integrações</span>
+          </a>
+        </li>
+        <li class="side-menu-btngroup-children">
+          <a href="">
+            <i class="fas fa-heart"></i>
+            <span class="none">Enviar Sugestões</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- SIDE-MENU -->
+    <!-- DATA-OPTIONS -->
+    <article id="data-options-body">
+      <form>
+        <!-- DATA-OPTIONS-AREA-1 -->
+        <section id="data-options-area-1">
+          <div class="padding-right" id="data-options-area-1-column-1">
+            <div class="input-form input-date-form input-form-sm padding-right">
+              <label for="activity-date-input">Data de atividade:</label>
+              <input type="date" id="activity-date-input">
+            </div>
+            <div class="input-form input-form-lg">
+              <label for="procedure-select">Procedimento</label>
+              <select id="procedure-select">
+                <option value="">Selecione</option>
+                <option value="1">Item 1</option>
+                <option value="2">Item 2</option>
+                <option value="3">Item 3</option>
+              </select>
+            </div>
+            <div class="input-form input-date-form input-form-sm padding-right">
+              <label for="end-date-input">Data de termino:</label>
+              <input type="date" id="end-date-input">
+            </div>
+            <div class="input-form input-form-lg">
+              <label for="harvest-select">Safra</label>
+              <select id="harvest-select">
+                <option value="">Selecione</option>
+                <option value="1">Item 1</option>
+                <option value="2">Item 2</option>
+                <option value="3">Item 3</option>
+              </select>
+            </div>
+            <div class="input-form" id="plots-area-body">
+              <label id="plots-title">Talhões:</label>
+              <div class="plots-data-list input-form-md">
+                <input type="text" placeholder="Filtrar">
+                <ul id="plots-data-list-add-data">
+                  <li class="plots-data-list-add-item" data-plot-selected="1" id="plots-data-list-add-item1">Item 1</li>
+                  <li class="plots-data-list-add-item" data-plot-selected="2" id="plots-data-list-add-item2">Item 2</li>
+                  <li class="plots-data-list-add-item" data-plot-selected="3" id="plots-data-list-add-item3">Item 3</li>
+                  <li class="plots-data-list-add-item" data-plot-selected="4" id="plots-data-list-add-item4">Item 4</li>
+                  <li class="plots-data-list-add-item" data-plot-selected="5" id="plots-data-list-add-item5">Item 5</li>
+                </ul>
+              </div>
+              <div class="plots-data-list input-form-md">
+                <input type="text" placeholder="Filtrar Adicionados">
+                <ul id="plots-data-list-remove-data"></ul>
+              </div>
+            </div>
+          </div>
+          <div id="data-options-area-1-column-2">
+            <div class="input-form input-form-xl">
+              <label for="status-select">Status</label>
+              <select id="status-select">
+                <option value="">Selecione</option>
+                <option value="1">Item 1</option>
+                <option value="2">Item 2</option>
+                <option value="3">Item 3</option>
+              </select>
+            </div>
+            <div class="input-form input-form-xl">
+              <label for="phase-select">Fase</label>
+              <select id="phase-select">
+                <option value="">Selecione</option>
+                <option value="1">Pós-Colheita</option>
+                <option value="2">Colheita</option>
+                <option value="3">Renovação</option>
+                <option value="4">Produção</option>
+                <option value="5">Formação</option>
+              </select>
+            </div>
+            <div class="none" id="input-form-radio">
+              <label>Forma de pagamento:</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="payment-form">
+                  <span class="radio-group-radiomark">
+                    <span class="radio-group-radiomark-checked"></span>
+                  </span>
+                  Diária
+                </label>
+              </div>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="payment-form" checked="checked">
+                  <span class="radio-group-radiomark">
+                    <span class="radio-group-radiomark-checked"></span>
+                  </span>
+                  Produção
+                </label>
+              </div>
+            </div>
+            <div class="input-form input-form-xl" id="textarea-form">
+              <label for="observation-textarea">Observação:</label>
+              <textarea id="observation-textarea"></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- DATA-OPTIONS-AREA-1 -->
+        <!-- DATA-OPTIONS-AREA-2 -->
+        <section id="data-options-area-2">
+          <div class="opcional-options">
+            <label id="label-use-inputs">Utilizar Insumos</label>
+            <div id="use-more-inputs-btn">
+              <button type="button">+ Utilizar mais insumos</button>
+            </div>
+          </div>
+          <div class="opcional-options">
+            <label id="label-use-machinery">Utilizar Maquinário</label>
+            <div id="use-machinery-btn">
+              <button type="button">+ Utilizar mais maquinários</button>
+            </div>
+          </div>
+          <div class="opcional-options">
+            <label id="label-use-labor">Utilizar Mão de Obra</label>
+            <div id="use-labor-btn">
+              <button type="button">+ Utilizar mais mão de obra</button>
+            </div>
+          </div>
+        </section>
+        <!-- DATA-OPTIONS-AREA-2 -->
+        <!-- DATA-OPTIONS-AREA-3 -->
+        <section id="data-options-area-3">
+          <div id="actions-btngroup-options-body">
+            <div class="actions-btngroup-options">
+              <button type="button" id="btn-save-continue">
+                <i class="fas fa-check"></i>
+                Salvar e Continuar Lançando
+              </button>
+            </div>
+            <div class="actions-btngroup-options">
+              <button type="button" id="btn-save">
+                <i class="fas fa-check"></i>
+                Salvar atividade
+              </button>
+            </div>
+            <div class="actions-btngroup-options">
+              <button type="button" id="btn-back">
+                <i class="fas fa-backward"></i>
+                Voltar
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- DATA-OPTIONS-AREA-3 -->
+        <!-- FOOTER -->
+        <footer id="footer-main">
+          <p>eAgro Gestão para o Agronegócio</p>
+        </footer>
+        <!-- FOOTER -->
+      </form>
+    </article>
+    <!-- DATA-OPTIONS -->
+  </main>
+  <!-- MAIN -->
+</body>
+</html>
